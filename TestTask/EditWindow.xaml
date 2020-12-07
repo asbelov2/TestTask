@@ -1,0 +1,133 @@
+﻿<Window x:Name="EditWindow1" x:Class="TestTask.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTask"
+        mc:Ignorable="d"
+        Title="Актив" Width="380" Height="700" MaxWidth="400" MaxHeight="800" MinWidth="360" MinHeight="300">
+    <Grid>
+        <StackPanel>
+            <StackPanel x:Name="AssetName">
+                <Label Content="Имя:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" />
+                <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Margin="10,0,0,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" />
+            </StackPanel>
+            <Separator />
+            <StackPanel x:Name="AssetType">
+                <Label Content="Тип актива:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" />
+                <DockPanel>
+                    <RadioButton x:Name="MoneyRadio" Margin="10,0,0,0" Content="Денежный" Checked="MoneyRadio_Checked" />
+                    <RadioButton x:Name="Non_monetaryRadio" Margin="10,0,0,10" Content="Неденежный" Checked="Non_monetaryRadio_Checked" />
+                </DockPanel>
+            </StackPanel>
+            <StackPanel x:Name="BankInfo" Visibility="Collapsed">
+                <Separator />
+                <DockPanel Margin="10,0,0,10">
+                    <CheckBox x:Name="BankCheckbox" VerticalAlignment="Center" Checked="BankCheckbox_Checked" Unchecked="BankCheckbox_Unchecked" />
+                    <StackPanel x:Name="BankInfoArea" IsEnabled="False">
+                        <Label Content="Банковская информация:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" />
+                        <DockPanel>
+                            <StackPanel>
+                                <Label Content="Название банка:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <TextBox x:Name="BankTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Content="Номер счёта:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" />
+                                <TextBox x:Name="BankAccountNumberTextBox" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </DockPanel>
+            </StackPanel>
+            <StackPanel x:Name="Money" IsEnabled="False" Visibility="Collapsed">
+                <Separator />
+                <Label Content="Денежный актив:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" />
+                <DockPanel Margin="10,0,0,10">
+                    <StackPanel>
+                        <Label Content="Сумма:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <TextBox x:Name="ValueTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Content="Номинал:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" />
+                        <TextBox x:Name="CurrencyTextBox" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                    </StackPanel>
+                </DockPanel>
+            </StackPanel>
+            <StackPanel x:Name="Non_monetary" IsEnabled="False" Visibility="Collapsed">
+                <Separator />
+                <Label Content="Неденежный актив:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" />
+                <StackPanel Margin="10,0,0,10">
+                    <DockPanel>
+                        <CheckBox x:Name="AmountCheckbox" VerticalAlignment="Center" Checked="AmountCheckbox_Checked" Unchecked="AmountCheckbox_Unchecked" />
+                        <StackPanel x:Name="AmountArea" IsEnabled="False">
+                            <StackPanel>
+                                <Label Content="Кол-во:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Content="Единица измерения:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" />
+                                <TextBox x:Name="UnitNameTextBox" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel>
+                        <StackPanel>
+                            <Label Content="Начальная балансовая стоимость:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <TextBox x:Name="BookValueTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Номинал:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" />
+                            <TextBox x:Name="BookCurrencyTextBox" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel>
+                        <StackPanel>
+                            <Label Content="Остаточная балансовая стоимость:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <TextBox x:Name="ResidualBookValueTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Номинал:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" />
+                            <TextBox x:Name="ResidualBookCurrencyTextBox" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel>
+                        <StackPanel>
+                            <Label Content="Оценочная стоимость:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <TextBox x:Name="EstimatedValueTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Номинал:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" />
+                            <TextBox x:Name="EstimatedCurrencyTextBox" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Margin="10,0,0,10">
+                    <DockPanel>
+                        <CheckBox x:Name="ProductionDateCheckbox" VerticalAlignment="Center" Checked="ProductionDateCheckbox_Checked" Unchecked="ProductionDateCheckbox_Unchecked" />
+                        <StackPanel x:Name="ProductionDateArea" IsEnabled="False">
+                            <Label Content="Дата производства:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <DatePicker x:Name="ProductionDate" HorizontalAlignment="Left" Margin="5,0,0,0" Width="200" />
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Margin="10,0,0,10">
+                    <DockPanel>
+                        <CheckBox x:Name="InventoryNumberCheckbox" VerticalAlignment="Center" Checked="InventoryNumberCheckbox_Checked" Unchecked="InventoryNumberCheckbox_Unchecked" />
+                        <StackPanel x:Name="InventoryNumberArea" IsEnabled="False">
+                            <Label Content="Инвентарный номер:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <TextBox x:Name="InventoryNumberTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Margin="10,0,0,10">
+                    <Label Content="Дополнительная информация:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox x:Name="AdditionalInfoTextBox" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" Width="330" Height="60" />
+                </StackPanel>
+            </StackPanel>
+            <DockPanel Margin="10,0,0,10">
+                <Button x:Name="OK" Width="120" Height="32" Margin="30,0,0,0" Content="OK" Click="OK_Click" />
+                <Button x:Name="Cancel" Width="120" Height="32" Margin="0,0,0,0" Content="Cancel" Click="Cancel_Click" />
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>
